@@ -29,6 +29,8 @@ Boilerplate lives at repo root: `app-boilerplate/`. ASO clone lives at `tools/re
 6. Sunday definition of done: TestFlight + Play internal, listing filled, 5 videos filmed. Store "Ready for Sale" may lag review.
 7. $0 ads until cash exists. Film yourself.
 8. Paywall sits in front of any paid AI API call.
+9. Backend default-deny. Never `allow read, write: if true`. Follow `.cursor/rules/factory-security.mdc`.
+10. Never put personal inboxes, API keys, or `isAdmin` on a client-readable document.
 
 ## Stack
 

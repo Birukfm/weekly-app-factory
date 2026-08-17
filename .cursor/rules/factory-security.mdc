@@ -1,0 +1,15 @@
+---
+description: Default-deny backend security for weekly factory apps
+alwaysApply: true
+---
+
+# Factory security (AI-built apps fail here)
+
+- Never ship `allow read, write: if true`. Default deny, then allow one collection.
+- Firestore is document-level, not column RLS. A public read returns every field. Split `public_contacts` vs `nojic_mailboxes`. Never store `forwardTo`, API keys, or personal inboxes on a readable doc.
+- Never trust the client: `isPremium`, `isAdmin`, `role`, and IAP status are server/store-owned. Clients cannot write those fields.
+- Paywall / entitlement check runs before any paid API (Gemini). UI hiding is not access control.
+- No secrets in git, `AppConfig`, or `--dart-define` that you cannot rotate. Gemini in the binary is extractable; prefer a Cloud Function proxy when the key must stay private.
+- Do not log emails, photos, or tokens. Do not create user accounts unless the week’s product requires them.
+- Storage default deny. Cloud Functions verify `request.auth` (and App Check when added).
+- If you add SQL/Supabase later: RLS on, no `USING (true)` for writes, no client-set `is_admin`.

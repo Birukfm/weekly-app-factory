@@ -1,0 +1,27 @@
+---
+description: Firestore and Storage rules for NOJIC factory backends
+globs: firebase/**,**/firestore.rules,**/storage.rules
+alwaysApply: false
+---
+
+# Firestore rules
+
+```
+// BAD
+allow read, write: if true;
+allow write: if request.auth != null; // any signed-in user writes anything
+
+// GOOD
+match /{document=**} { allow read, write: if false; }
+match /public_contacts/{id} { allow read: if true; allow write: if false; }
+match /users/{uid} {
+  allow read: if request.auth.uid == uid;
+  allow create, update: if request.auth.uid == uid
+    && !request.resource.data.keys().hasAny(['role', 'isAdmin', 'isPremium']);
+}
+```
+
+- `admins/{uid}` is Console/Admin SDK only. Apps never create their own admin doc.
+- Public collections: only fields you would print on a store listing.
+- Private collections: `allow read, write: if false` and write via Admin SDK or a callable.
+- Storage: deny all until a week actually needs uploads; then path must include `uid`.

@@ -1,0 +1,23 @@
+---
+description: Client trust, IAP, and key handling in factory Flutter apps
+globs: apps/**/*.dart,app-boilerplate/**/*.dart
+alwaysApply: false
+---
+
+# Flutter client is not the source of truth
+
+```
+// BAD
+if (kDebugMode) _setPremium(true); // also runs if you forget the flag in release
+premium.isPremium = true; // from a Firestore user doc the client wrote
+
+// GOOD
+executePurchaseWeekly() talks to StoreKit / Play Billing
+kDebugMode && AppConfig.debugPremium is the only stub, default false
+```
+
+- Entitlement: `PremiumController.canUseFreeTier` before Gemini. Refund the free use on throw.
+- Do not persist `isPremium` from a client-writable user document.
+- `String.fromEnvironment('GEMINI_API_KEY')` is inside the IPA/AAB. Rotate if leaked. Do not commit keys.
+- Support/privacy emails come from `AppConfig` or `public_contacts`. Never read `nojic_mailboxes` from the app.
+- Camera/photo usage strings required if you pick images. No extra PII collection.

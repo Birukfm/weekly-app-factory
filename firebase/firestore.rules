@@ -1,0 +1,49 @@
+rules_version = '2';
+
+// Default deny. Firestore has no column-level RLS: a allowed read returns every field.
+// Never put forwardTo, secrets, or isAdmin on a publicly readable document.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function hasAdminDoc() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Public store emails only. No forwardTo, no personal inbox.
+    match /public_contacts/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Personal inboxes and routing. Admin SDK / Console only.
+    match /nojic_mailboxes/{id} {
+      allow read, write: if false;
+    }
+
+    // Staff allow-list. Create docs in Console. Clients cannot self-promote.
+    match /admins/{uid} {
+      allow read: if isOwner(uid) || hasAdminDoc();
+      allow write: if false;
+    }
+
+    // Future per-user data. Path uid must match auth.uid. No client-set role/premium.
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && !request.resource.data.keys().hasAny(['role', 'isAdmin', 'isPremium']);
+    }
+  }
+}
