@@ -1,7 +1,7 @@
 [
   {
     "id": "apps",
-    "email": "apps@nojic.com",
+    "email": "apps@nojic.net",
     "role": "store_developer_contact",
     "usedBy": ["app-store-connect", "play-console"],
     "forwardTo": "REPLACE_WITH_INBOX",
@@ -9,7 +9,7 @@
   },
   {
     "id": "support",
-    "email": "support@nojic.com",
+    "email": "support@nojic.net",
     "role": "in_app_and_store_support",
     "usedBy": ["tattoo-meaning-settings", "app-store-connect", "play-console"],
     "forwardTo": "REPLACE_WITH_INBOX",
@@ -17,7 +17,7 @@
   },
   {
     "id": "privacy",
-    "email": "privacy@nojic.com",
+    "email": "privacy@nojic.net",
     "role": "privacy_and_data_requests",
     "usedBy": ["tattoo-meaning-privacy-html", "play-data-safety"],
     "forwardTo": "REPLACE_WITH_INBOX",
@@ -25,7 +25,7 @@
   },
   {
     "id": "legal",
-    "email": "legal@nojic.com",
+    "email": "legal@nojic.net",
     "role": "terms",
     "usedBy": ["tattoo-meaning-terms-html"],
     "forwardTo": "REPLACE_WITH_INBOX",
@@ -33,7 +33,7 @@
   },
   {
     "id": "billing",
-    "email": "billing@nojic.com",
+    "email": "billing@nojic.net",
     "role": "iap_and_refunds",
     "usedBy": ["tattoo-meaning-terms-html", "play-payments-profile"],
     "forwardTo": "REPLACE_WITH_INBOX",
@@ -41,7 +41,7 @@
   },
   {
     "id": "hello",
-    "email": "hello@nojic.com",
+    "email": "hello@nojic.net",
     "role": "general_contact",
     "usedBy": ["company-website"],
     "forwardTo": "REPLACE_WITH_INBOX",
@@ -49,7 +49,7 @@
   },
   {
     "id": "dpo",
-    "email": "dpo@nojic.com",
+    "email": "dpo@nojic.net",
     "role": "data_protection_officer",
     "usedBy": ["ethiopia-pdpa", "gdpr-if-eu-users"],
     "forwardTo": "REPLACE_WITH_INBOX",
@@ -57,7 +57,7 @@
   },
   {
     "id": "tattoomeaning",
-    "email": "tattoomeaning@nojic.com",
+    "email": "tattoomeaning@nojic.net",
     "role": "per_app_filter",
     "usedBy": ["tattoo-meaning"],
     "forwardTo": "REPLACE_WITH_INBOX",

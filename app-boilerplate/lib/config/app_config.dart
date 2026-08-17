@@ -6,8 +6,8 @@ class AppConfig {
   static const String appName = 'App Boilerplate';
   static const String privacyPolicyUrl = 'https://example.com/privacy';
   static const String termsOfUseUrl = 'https://example.com/terms';
-  static const String supportEmail = 'support@nojic.com';
-  static const String privacyEmail = 'privacy@nojic.com';
+  static const String supportEmail = 'support@nojic.net';
+  static const String privacyEmail = 'privacy@nojic.net';
   static const String weeklyProductId = 'weekly';
   static const String yearlyProductId = 'yearly';
   static const String lifetimeProductId = 'lifetime';

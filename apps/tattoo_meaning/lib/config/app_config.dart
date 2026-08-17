@@ -8,8 +8,8 @@ class AppConfig {
       'https://birukfm.github.io/weekly-app-factory/tattoo-meaning/privacy.html';
   static const String termsOfUseUrl =
       'https://birukfm.github.io/weekly-app-factory/tattoo-meaning/terms.html';
-  static const String supportEmail = 'support@nojic.com';
-  static const String privacyEmail = 'privacy@nojic.com';
+  static const String supportEmail = 'support@nojic.net';
+  static const String privacyEmail = 'privacy@nojic.net';
   static const String weeklyProductId = 'tattoomeaning_weekly';
   static const String yearlyProductId = 'tattoomeaning_yearly';
   static const String lifetimeProductId = 'tattoomeaning_lifetime';

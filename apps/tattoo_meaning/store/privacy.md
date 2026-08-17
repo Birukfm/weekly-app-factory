@@ -1,7 +1,7 @@
 # Privacy policy
 
 **App name:** Tattoo Meaning  
-**Contact:** support@nojic.com · privacy@nojic.com
+**Contact:** support@nojic.net · privacy@nojic.net
 
 ## Data we collect
 

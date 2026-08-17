@@ -20,7 +20,7 @@ Apple and Google often take a few days. The app needs to be **functioning and re
 4. GitHub Pages: Settings → Pages → Deploy from branch `main`, folder `/docs`. Confirm:
    - https://birukfm.github.io/weekly-app-factory/tattoo-meaning/privacy.html
    - https://birukfm.github.io/weekly-app-factory/tattoo-meaning/terms.html
-5. Store contact is `support@nojic.com` (privacy `privacy@nojic.com`). Create those aliases before submit.
+5. Store contact is `support@nojic.net` (privacy `privacy@nojic.net`). Create those aliases before submit.
 6. Archive with a Gemini key so reviewers get a live photo read:
    `flutter build ipa --dart-define=GEMINI_API_KEY=YOUR_KEY`
    Same `--dart-define` for the Play app bundle.
