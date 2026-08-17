@@ -6,6 +6,7 @@ import 'data/scan_scope.dart';
 import 'premium/premium_controller.dart';
 import 'premium/premium_scope.dart';
 import 'screens/bootstrap_screen.dart';
+import 'theme/factory_theme.dart';
 
 class FactoryApp extends StatefulWidget {
   const FactoryApp({super.key});
@@ -43,10 +44,7 @@ class _FactoryAppState extends State<FactoryApp> {
           builder: (BuildContext context, Widget? child) => child!,
           child: MaterialApp(
             title: AppConfig.appName,
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: AppConfig.seedColor),
-              useMaterial3: true,
-            ),
+            theme: FactoryTheme.dark,
             home: const BootstrapScreen(),
           ),
         ),

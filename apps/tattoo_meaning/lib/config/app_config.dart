@@ -19,6 +19,7 @@ class AppConfig {
   static const String geminiModel = 'gemini-2.0-flash';
   static const bool debugPremium = false;
   static const Color seedColor = Color(0xFF8E1C3A);
+  static const Color accentGold = Color(0xFFC4A574);
   static const int freeUseLimit = 3;
   static const double heroIconSize = 96;
   static const double paywallIconSize = 64;

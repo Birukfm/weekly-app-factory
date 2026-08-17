@@ -14,7 +14,7 @@ class MeaningInterpreter {
 
   Future<MeaningResult> executeRead(Uint8List imageBytes) async {
     if (!AppConfig.hasGeminiKey) {
-      return _catalog.buildFallback();
+      return _catalog.buildFallback(imageBytes);
     }
     try {
       final GenerativeModel model = GenerativeModel(
@@ -32,11 +32,11 @@ class MeaningInterpreter {
       final String text = response.text ?? '';
       final MeaningResult? parsed = _parseJson(text);
       if (parsed == null) {
-        return _catalog.buildFallback();
+        return _catalog.buildFallback(imageBytes);
       }
       return parsed;
     } catch (_) {
-      return _catalog.buildFallback();
+      return _catalog.buildFallback(imageBytes);
     }
   }
 

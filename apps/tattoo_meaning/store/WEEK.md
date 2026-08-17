@@ -33,6 +33,10 @@ Apple and Google often take a few days. Submitting after Wednesday makes “live
 - **Competitors:** InkSense (0 ratings), Tattoo AI Design (50k, wrong job), Tattoo ID Scan (26 ratings).
 - **Related keywords killed:** tattoo symbol meaning, what does my tattoo mean, ink meaning (low volume / generator clutter). Keep them out of the name.
 
+## App is built (Mon 17)
+
+Scan, result, history, collection, paywall, dark parlor theme, icon, listing copy are in the repo. Government / DUNS / org account work is on you Tue–Wed.
+
 ## Blockers before submit (not code)
 
 1. MX for `nojic.net` so `support@nojic.net` and `privacy@nojic.net` receive mail.

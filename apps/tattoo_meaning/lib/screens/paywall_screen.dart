@@ -5,6 +5,7 @@ import '../config/onboarding_copy.dart';
 import '../premium/premium_controller.dart';
 import '../premium/premium_scope.dart';
 import '../premium/session_store.dart';
+import '../widgets/store_legal_links.dart';
 import 'home_shell.dart';
 
 class PaywallScreen extends StatelessWidget {
@@ -76,14 +77,28 @@ class PaywallScreen extends StatelessWidget {
             spacing: 16,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Icon(Icons.workspace_premium, size: AppConfig.paywallIconSize, color: colors.primary),
-              Text(
-                '${AppConfig.appName} Pro',
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headlineMedium,
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    spacing: 16,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Icon(Icons.workspace_premium, size: AppConfig.paywallIconSize, color: colors.primary),
+                      Text(
+                        '${AppConfig.appName} Pro',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headlineMedium,
+                      ),
+                      Text(
+                        'Weekly plan includes a free trial. Skip for three free reads.',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      const PaywallBenefitList(),
+                    ],
+                  ),
+                ),
               ),
-              const PaywallBenefitList(),
-              const Spacer(),
               if (premium.isPremium)
                 FilledButton(
                   onPressed: () => _completeAndOpenHome(context),
@@ -107,6 +122,7 @@ class PaywallScreen extends StatelessWidget {
                     : premium.executeRestorePurchases,
                 child: const Text('Restore purchases'),
               ),
+              const StoreLegalLinks(),
             ],
           ),
         ),

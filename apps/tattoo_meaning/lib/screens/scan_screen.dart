@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../config/app_config.dart';
@@ -12,6 +13,8 @@ import '../data/tattoo_scan.dart';
 import '../premium/premium_controller.dart';
 import '../premium/premium_scope.dart';
 import '../premium/review_prompt.dart';
+import '../widgets/ink_viewfinder.dart';
+import '../widgets/remaining_reads_banner.dart';
 import 'paywall_screen.dart';
 import 'result_screen.dart';
 
@@ -38,15 +41,24 @@ class _ScanScreenState extends State<ScanScreen> {
       );
       return;
     }
-    final XFile? file = await _picker.pickImage(
-      source: source,
-      maxWidth: 1024,
-      imageQuality: 85,
-    );
-    if (file == null || !mounted) {
-      return;
+    try {
+      final XFile? file = await _picker.pickImage(
+        source: source,
+        maxWidth: 1024,
+        imageQuality: 85,
+      );
+      if (file == null || !mounted) {
+        return;
+      }
+      await _executeRead(await file.readAsBytes());
+    } on PlatformException {
+      if (!mounted) {
+        return;
+      }
+      setState(() {
+        _errorMessage = 'Camera or photos permission is needed to read a tattoo.';
+      });
     }
-    await _executeRead(await file.readAsBytes());
   }
 
   Future<void> _executeRead(Uint8List bytes) async {
@@ -113,12 +125,13 @@ class _ScanScreenState extends State<ScanScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               const Spacer(),
-              Icon(Icons.camera_alt_outlined, size: AppConfig.heroIconSize, color: colors.primary),
+              const Center(child: InkViewfinder()),
               Text(
                 'Photograph a tattoo to read its meaning.',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
+              const RemainingReadsBanner(),
               if (_errorMessage != null)
                 Text(
                   _errorMessage!,

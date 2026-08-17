@@ -38,10 +38,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           padding: const EdgeInsets.all(24),
           child: Column(
             spacing: 24,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               const Spacer(),
               Icon(step.icon, size: AppConfig.heroIconSize, color: colors.primary),
-              Text(step.title, style: Theme.of(context).textTheme.headlineMedium),
+              Text(
+                step.title,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
               Text(
                 step.body,
                 textAlign: TextAlign.center,
