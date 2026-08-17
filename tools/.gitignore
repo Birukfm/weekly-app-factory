@@ -1,0 +1,5 @@
+# Clone is local-only (AGPL-3.0). Recreate with ./clone-respectaso.sh
+respectaso/
+.venv/
+__pycache__/
+*.pyc

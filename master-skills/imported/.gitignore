@@ -1,0 +1,7 @@
+# Cloned skill trees. Keep installer + source map + Anthropic pointers.
+*
+!.gitignore
+!SOURCES.md
+!install.sh
+!anthropic/
+!anthropic/README.md
