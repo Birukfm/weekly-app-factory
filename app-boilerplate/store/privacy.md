@@ -3,7 +3,7 @@
 Replace this page before store submit. Host it on GitHub Pages and put the HTTPS URL in `lib/config/app_config.dart`.
 
 **App name:** App Boilerplate  
-**Contact:** support@example.com
+**Contact:** support@nojic.com · privacy@nojic.com
 
 ## Data we collect
 

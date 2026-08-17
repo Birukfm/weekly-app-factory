@@ -1,0 +1,66 @@
+[
+  {
+    "id": "apps",
+    "email": "apps@nojic.com",
+    "role": "store_developer_contact",
+    "usedBy": ["app-store-connect", "play-console"],
+    "forwardTo": "REPLACE_WITH_INBOX",
+    "requiredThisWeek": true
+  },
+  {
+    "id": "support",
+    "email": "support@nojic.com",
+    "role": "in_app_and_store_support",
+    "usedBy": ["tattoo-meaning-settings", "app-store-connect", "play-console"],
+    "forwardTo": "REPLACE_WITH_INBOX",
+    "requiredThisWeek": true
+  },
+  {
+    "id": "privacy",
+    "email": "privacy@nojic.com",
+    "role": "privacy_and_data_requests",
+    "usedBy": ["tattoo-meaning-privacy-html", "play-data-safety"],
+    "forwardTo": "REPLACE_WITH_INBOX",
+    "requiredThisWeek": true
+  },
+  {
+    "id": "legal",
+    "email": "legal@nojic.com",
+    "role": "terms",
+    "usedBy": ["tattoo-meaning-terms-html"],
+    "forwardTo": "REPLACE_WITH_INBOX",
+    "requiredThisWeek": true
+  },
+  {
+    "id": "billing",
+    "email": "billing@nojic.com",
+    "role": "iap_and_refunds",
+    "usedBy": ["tattoo-meaning-terms-html", "play-payments-profile"],
+    "forwardTo": "REPLACE_WITH_INBOX",
+    "requiredThisWeek": true
+  },
+  {
+    "id": "hello",
+    "email": "hello@nojic.com",
+    "role": "general_contact",
+    "usedBy": ["company-website"],
+    "forwardTo": "REPLACE_WITH_INBOX",
+    "requiredThisWeek": false
+  },
+  {
+    "id": "dpo",
+    "email": "dpo@nojic.com",
+    "role": "data_protection_officer",
+    "usedBy": ["ethiopia-pdpa", "gdpr-if-eu-users"],
+    "forwardTo": "REPLACE_WITH_INBOX",
+    "requiredThisWeek": false
+  },
+  {
+    "id": "tattoomeaning",
+    "email": "tattoomeaning@nojic.com",
+    "role": "per_app_filter",
+    "usedBy": ["tattoo-meaning"],
+    "forwardTo": "REPLACE_WITH_INBOX",
+    "requiredThisWeek": false
+  }
+]

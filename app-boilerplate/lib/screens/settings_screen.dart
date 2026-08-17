@@ -52,6 +52,11 @@ class SettingsScreen extends StatelessWidget {
             subtitle: const Text(AppConfig.supportEmail),
             onTap: () => _openUrl('mailto:${AppConfig.supportEmail}'),
           ),
+          ListTile(
+            title: const Text('Privacy requests'),
+            subtitle: const Text(AppConfig.privacyEmail),
+            onTap: () => _openUrl('mailto:${AppConfig.privacyEmail}'),
+          ),
         ],
       ),
     );

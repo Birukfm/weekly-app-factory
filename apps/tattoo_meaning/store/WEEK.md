@@ -35,7 +35,7 @@ Apple and Google often take a few days. Submitting after Wednesday makes “live
 
 ## Blockers before submit (not code)
 
-1. Real support email in `AppConfig.supportEmail`.
+1. MX for `nojic.com` so `support@nojic.com` and `privacy@nojic.com` receive mail.
 2. GitHub Pages on for `docs/tattoo-meaning/*.html`.
 3. IAP products created and attached to the app.
 4. Release archive compiled with `--dart-define=GEMINI_API_KEY=...` so the live read works for reviewers.
