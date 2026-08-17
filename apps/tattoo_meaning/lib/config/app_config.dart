@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'secrets.dart';
+
 class AppConfig {
   const AppConfig._();
 
@@ -26,7 +28,11 @@ class AppConfig {
   static const int maxImageBytes = 1200000;
 
   static String get geminiApiKey {
-    return const String.fromEnvironment('GEMINI_API_KEY');
+    const String fromDefine = String.fromEnvironment('GEMINI_API_KEY');
+    if (fromDefine.isNotEmpty) {
+      return fromDefine;
+    }
+    return GeminiSecrets.apiKey;
   }
 
   static bool get hasGeminiKey => geminiApiKey.isNotEmpty;
